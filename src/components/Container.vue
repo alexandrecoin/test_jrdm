@@ -1,7 +1,13 @@
 <template>
   <b-container class="bv-example-row">
     <b-row>
-      <b-col><Building :floors="floors"/></b-col>
+      <b-col
+        ><Building
+          :floors="floors"
+          :currentFloor="currentFloor"
+          :isDoorOpen="isDoorOpen"
+          :isSelectedFloorUp="isSelectedFloorUp"
+      /></b-col>
       <b-col
         ><Panel
           :floors="floors"
@@ -46,7 +52,7 @@ export default {
       return new Promise((resolve) => {
         setTimeout(() => {
           this.currentFloor = floor;
-          console.log(this.floor);
+          console.log(this.currentFloor);
           resolve('Floor updated');
         }, 2000);
       });
@@ -71,6 +77,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>

@@ -5,7 +5,7 @@
         <tr v-for="floor in floors" :key="floor">
           <td>{{ floor }}</td>
           <td>
-            <b-button/>
+            <b-button :variant="floorColor(floor)" />
           </td>
         </tr>
       </tbody>
@@ -15,6 +15,11 @@
 
 <script>
 export default {
-  props: ['floors'],
+  props: ['floors', 'currentFloor'],
+  methods: {
+    floorColor(floor) {
+      return floor === this.currentFloor ? 'success' : 'danger';
+    },
+  },
 };
 </script>
