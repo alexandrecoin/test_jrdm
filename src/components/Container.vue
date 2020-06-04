@@ -61,7 +61,6 @@ export default {
     },
 
     async changeFloor(floor) {
-      console.log(this.calledFloors);
       // console.log('1', floor, this.currentFloor);
       this.checkFloorUpDown(floor);
       await this.handleDoors();

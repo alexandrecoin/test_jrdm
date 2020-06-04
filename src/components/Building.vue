@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p>BUILDING DISPLAY</p>
+    <p>AFFICHAGE</p>
     <table>
       <tbody>
         <tr v-for="floor in floors" :key="floor">
-          <td>{{ floor }}</td>
+          <td> {{ floor === 0 ? 'RDC' : floor }}</td>
           <td>
             <b-button :variant="floorColor(floor)" />
           </td>
