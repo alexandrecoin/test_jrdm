@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>BUILDING DISPLAY</p>
     <table>
       <tbody>
         <tr v-for="floor in floors" :key="floor">

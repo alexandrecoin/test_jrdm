@@ -1,13 +1,7 @@
 <template>
   <b-container class="bv-example-row">
     <b-row>
-      <b-col
-        ><Building
-          :floors="floors"
-          :currentFloor="currentFloor"
-          :isDoorOpen="isDoorOpen"
-          :isSelectedFloorUp="isSelectedFloorUp"
-      /></b-col>
+      <b-col><Building :floors="floors" :currentFloor="currentFloor"/></b-col>
       <b-col
         ><Panel
           :floors="floors"
@@ -32,7 +26,7 @@ export default {
   },
   data() {
     return {
-      floors: [5, 4, 3, 2, 1, 0],
+      floors: [6, 5, 4, 3, 2, 1, 0],
       currentFloor: 0,
       isDoorOpen: true,
       isSelectedFloorUp: true,

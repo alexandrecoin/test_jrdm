@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>ELEVATOR PANEL</p>
     <tbody>
       <tr v-for="floor in floors" :key="floor">
         <td>
