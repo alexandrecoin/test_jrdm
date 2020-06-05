@@ -12,10 +12,10 @@
     </tbody>
     <b-row>
       <b-col>
-        <b-button disabled="disabled">SENS : {{ elevatorDirection }}</b-button>
+        <b-button disabled>SENS : {{ elevatorOrientation }}</b-button>
       </b-col>
       <b-col>
-        <b-button disabled="disabled">
+        <b-button disabled>
           {{ doorsState }}
         </b-button>
       </b-col>
@@ -26,19 +26,18 @@
 
 <script>
 export default {
-  props: ['floors', 'currentFloor', 'isDoorOpen', 'isSelectedFloorUp'],
+  props: ['floors', 'currentFloor', 'isDoorOpen', 'elevatorDirection'],
   computed: {
-    elevatorDirection() {
-      return this.isSelectedFloorUp ? 'MONTÉE' : 'DESCENTE';
+    elevatorOrientation() {
+      return this.elevatorDirection === 'up'
+        ? 'MONTÉE'
+        : this.elevatorDirection === 'down'
+        ? 'DESCENTE'
+        : 'AUCUN DÉPLACEMENT';
     },
     doorsState() {
       return this.isDoorOpen ? 'PORTES OUVERTES' : 'PORTES FERMÉES';
     },
-  },
-  data() {
-    return {
-      disabled: true,
-    };
   },
   methods: {
     callElevator(floor) {
